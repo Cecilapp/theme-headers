@@ -2,7 +2,7 @@
 
 The _Headers_ component theme for [Cecil](https://cecil.app) provides support of `_headers` file generation.
 
-After installation and without any configuration, this component theme generate a [`_headers`](./layouts/_default/page.headers.twig) file containing HTTP headers created by Cecil (generated from [`headers' configuration`](https://cecil.app/documentation/configuration/#headers))
+After installation and without any configuration, this component theme generate a [`_headers`](./layouts/_default/page.headers.twig) file containing HTTP headers created by Cecil (generated from [`headers' configuration`](https://cecil.app/documentation/configuration/#server-headers)).
 
 Services that support the `_headers` file:
 
@@ -30,11 +30,12 @@ theme:
 ### Add headers
 
 ```yaml
-headers:
-  - path: <path> # Relative path, prefixed with a slash. Support "*" wildcard.
-    headers:
-      - key: <key>
-        value: "<value>"
+server:
+  headers:
+    - path: <path> # Relative path, prefixed with a slash. Support "*" wildcard.
+      headers:
+        - key: <key>
+          value: "<value>"
 ```
 
-Document: <https://cecil.app/documentation/configuration/#headers>.
+Documentation: <https://cecil.app/documentation/configuration/#server-headers>
