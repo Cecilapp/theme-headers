@@ -1,0 +1,23 @@
+{
+  "name": "cecil/theme-headers",
+  "type": "cecil-theme",
+  "description": "Cecil component theme Headers",
+  "keywords": ["Cecil", "theme", "headers"],
+  "license": "MIT",
+  "require": {
+    "cecil/theme-installer": "^1.4|^2.0"
+  },
+  "extra": {
+    "name": "headers",
+    "branch-alias": {
+      "dev-master": "2.x-dev"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "cecil/theme-installer": true
+    }
+  }
+}

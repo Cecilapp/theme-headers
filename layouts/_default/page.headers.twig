@@ -1,0 +1,10 @@
+{#- HTTP headers -#}
+# HTTP headers from Cecil
+{%- if site.server.headers is defined -%}
+  {%- for entry in site.server.headers ~%}
+{{ entry.path ~}}
+    {%- for header in entry.headers ~%}
+  {{ header.key }}: {{ header.value }}
+    {%- endfor ~%}
+  {%- endfor ~%}
+{%- endif ~%}
