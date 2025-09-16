@@ -1,6 +1,6 @@
 # Headers component theme
 
-The _Headers_ component theme for [Cecil](https://cecil.app) provides support of `_headers` file generation, based on configuration.
+The _Headers_ component theme for [Cecil](https://cecil.app) provides support of `_headers` file generation.
 
 After installation and without any configuration, this component theme generate a [`_headers`](./layouts/_default/page.headers.twig) file containing HTTP headers created by Cecil (generated from [`headers' configuration`](https://cecil.app/documentation/configuration/#headers))
 
