@@ -1,4 +1,4 @@
-# New default page (`_headers`)
+# Default page (`_headers`)
 pages:
   default:
     headers:
@@ -7,22 +7,21 @@ pages:
       multilingual: false
       serviceworker:
         precache: false
-# Custom output (`headers`)
+# Custom output
 output:
   formats:
     - name: headers
       mediatype: text/plain
       extension: ""
-# Default HTTP headers
-server:
-  headers:
+# Theme options
+headers:
+  # Default HTTP headers (`false` to disable)
+  default:
     # Security
     - path: /*
       headers:
         - key: X-Frame-Options
           value: SAMEORIGIN
-        - key: X-XSS-Protection
-          value: 1; mode=block
         - key: X-Content-Type-Options
           value: nosniff
         - key: Strict-Transport-Security
@@ -85,13 +84,13 @@ server:
     - path: /serviceworker.js
       headers:
         - key: Cache-Control
-          value: private, max-age=31536000
+          value: no-cache
     - path: /manifest.webmanifest
       headers:
         - key: Content-Type
           value: application/manifest+json
         - key: Cache-Control
-          value: private, max-age=31536000
+          value: no-cache
     # Admin
     - path: /admin/*
       headers:
