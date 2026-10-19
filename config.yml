@@ -7,6 +7,7 @@ pages:
       multilingual: false
       serviceworker:
         precache: false
+      excluded: true
 # Custom output
 output:
   formats:
