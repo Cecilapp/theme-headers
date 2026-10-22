@@ -1,0 +1,6 @@
+# HTTP headers from Cecil config file(s)
+/blog/*
+  X-Robots-Tag: noindex
+/*
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

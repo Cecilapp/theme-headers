@@ -1,0 +1,44 @@
+# HTTP headers from Cecil config file(s)
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+/favicon*
+  Cache-Control: public, max-age=31536000
+/logo*
+  Cache-Control: public, max-age=31536000
+/icon*
+  Cache-Control: public, max-age=31536000
+/assets/*
+  Cache-Control: public, max-age=31536000
+/images/*
+  Cache-Control: public, max-age=31536000
+/videos/*
+  Cache-Control: public, max-age=31536000
+/styles/*
+  Cache-Control: public, max-age=31536000
+/css/*
+  Cache-Control: public, max-age=31536000
+/*.css
+  Cache-Control: public, max-age=31536000
+/fonts/*
+  Cache-Control: public, max-age=31536000
+/javascript/*
+  Cache-Control: private, max-age=31536000
+/js/*
+  Cache-Control: private, max-age=31536000
+/*.js
+  Cache-Control: private, max-age=31536000
+/serviceworker.js
+  Cache-Control: no-cache
+/manifest.webmanifest
+  Content-Type: application/manifest+json
+  Cache-Control: no-cache
+/admin/*
+  Cache-Control: no-cache, no-store, must-revalidate, max-age=0
+  Content-Security-Policy: default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline' blob: *; connect-src * 'unsafe-inline'; frame-src *; font-src * data: 'unsafe-inline';
+/blog/*
+  X-Robots-Tag: noindex
+/*
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

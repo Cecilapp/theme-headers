@@ -1,0 +1,53 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1' # weekly, to catch regressions from new Cecil releases
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: mbstring, intl, gettext, fileinfo, gd
+          coverage: none
+
+      - name: Download Cecil
+        run: |
+          curl -sSOL https://cecil.app/cecil.phar
+          php cecil.phar --version
+
+      - name: Link theme into the demo site
+        run: php demo/link.php
+
+      - name: Build demo
+        run: php cecil.phar build demo -v
+
+      - name: Check generated `_headers` file
+        run: diff demo/expected/_headers demo/_site/_headers
+
+      - name: Check `_headers` is excluded from listings
+        run: |
+          if grep -l '_headers' demo/_site/blog/index.html demo/_site/sitemap.xml demo/_site/atom.xml demo/_site/blog/atom.xml; then
+            echo "::error::The _headers page is listed"
+            exit 1
+          fi
+
+      - name: Build demo without default headers
+        run: php cecil.phar build demo -v --config config.no-default.yml --output _site_no-default
+
+      - name: Check generated `_headers` file without default headers
+        run: diff demo/expected/_headers.no-default demo/_site_no-default/_headers

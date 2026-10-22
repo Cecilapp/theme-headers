@@ -1,0 +1,3 @@
+# Extra config file: disables the default headers of the theme
+headers:
+  default: false

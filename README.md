@@ -71,6 +71,18 @@ headers:
 
 > When a path matches several rules, the headers of all matching rules are applied.
 
+## Development
+
+The [`demo/`](./demo/) website uses the theme under development and covers the supported cases (default headers, headers defined in `server.headers`, default headers disabled):
+
+```bash
+php demo/link.php
+php cecil.phar build demo
+php cecil.phar build demo --config config.no-default.yml --output _site_no-default
+```
+
+The generated `_headers` files must match [`demo/expected/_headers`](./demo/expected/_headers) and [`demo/expected/_headers.no-default`](./demo/expected/_headers.no-default): this is checked by the [Test](./.github/workflows/test.yml) workflow.
+
 ## License
 
 _Headers_ is a free software distributed under the terms of the MIT license.

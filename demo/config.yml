@@ -1,0 +1,27 @@
+title: Headers
+description: Demo of the Headers component theme for Cecil.
+baseurl: http://localhost:8000/
+theme:
+  - headers
+language: en
+languages:
+  - code: en
+    name: English
+    locale: en_US
+  - code: fr
+    name: Français
+    locale: fr_FR
+server:
+  headers:
+    # new path
+    - path: /blog/*
+      headers:
+        - key: X-Robots-Tag
+          value: noindex
+    # path already covered by the default headers
+    - path: /*
+      headers:
+        - key: Referrer-Policy
+          value: strict-origin-when-cross-origin
+        - key: Permissions-Policy
+          value: "camera=(), microphone=(), geolocation=()"
