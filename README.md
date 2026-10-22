@@ -32,15 +32,6 @@ theme:
 
 The `_headers` file is generated at the root of the output directory (`_site/` by default).
 
-### Configuration
-
-Options and their default values:
-
-```yaml
-headers:
-  default: [...] # default HTTP headers (`false` to disable)
-```
-
 ### Add headers
 
 ```yaml
