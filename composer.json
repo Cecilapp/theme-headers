@@ -5,19 +5,11 @@
   "keywords": ["Cecil", "theme", "headers"],
   "license": "MIT",
   "require": {
-    "cecil/theme-installer": "^1.4|^2.0"
+    "cecil/theme-installer": "^2.1"
   },
   "extra": {
-    "name": "headers",
     "branch-alias": {
       "dev-main": "2.x-dev"
-    }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "config": {
-    "allow-plugins": {
-      "cecil/theme-installer": true
     }
   }
 }
