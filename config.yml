@@ -99,9 +99,3 @@ headers:
           value: "no-cache, no-store, must-revalidate, max-age=0"
         - key: Content-Security-Policy
           value: "default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline' blob: *; connect-src * 'unsafe-inline'; frame-src *; font-src * data: 'unsafe-inline';"
-    - path: /.netlify/*
-      headers:
-        - key: Cache-Control
-          value: "no-cache, no-store, must-revalidate, max-age=0"
-        - key: Content-Security-Policy
-          value: "default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline' blob: *; connect-src * 'unsafe-inline'; frame-src *; font-src * data: 'unsafe-inline';"

@@ -57,7 +57,7 @@ The theme provides the following [default headers](./config.yml):
 | `/favicon*`, `/logo*`, `/icon*`, `/assets/*`, `/images/*`, `/videos/*`, `/styles/*`, `/css/*`, `/*.css`, `/fonts/*` | `Cache-Control: public, max-age=31536000` (1 year) |
 | `/javascript/*`, `/js/*`, `/*.js` | `Cache-Control: private, max-age=31536000` (1 year) |
 | `/serviceworker.js`, `/manifest.webmanifest` | `Cache-Control: no-cache` |
-| `/admin/*`, `/.netlify/*` | `Cache-Control: no-cache, no-store, must-revalidate`, permissive `Content-Security-Policy` |
+| `/admin/*` | `Cache-Control: no-cache, no-store, must-revalidate`, permissive `Content-Security-Policy` |
 
 > [!IMPORTANT]
 > Files with a long cache lifetime should have a fingerprint in their name (see [`assets.fingerprint`](https://cecil.app/documentation/configuration/#assets)), otherwise visitors may not receive their updates.
